@@ -194,7 +194,7 @@
         left: 0;
         width: 100%;
         z-index: 1000;
-        padding: 1.5rem 0;
+        padding: 2rem 0;
         transition: all 0.4s ease;
         backdrop-filter: blur(10px);
         -webkit-backdrop-filter: blur(20px);
@@ -203,7 +203,7 @@
         }
         
         .header.scrolled {
-        padding: 1rem 0;
+        padding: 1.3rem 0;
         background: #6e64ff;
         color: #ffffff;
         box-shadow: var(--shadow);
@@ -227,12 +227,13 @@
         .header.scrolled .gif{
             width: 60px;
             transition: all 0.4s ease;
+            top: -25px;
         }
 
         .gif{
-            width: 70px;
+            width: 80px;
             position: absolute;
-            top: -30px;
+            top: -35px;
             transition: all 0.4s ease;
         }
         
@@ -1677,7 +1678,7 @@
                 A Creative Graphic Designer, Web Developer, and AI Enthusiast.
             </p>
             <div class="fade-in-delay-2">
-                <a href="#projects" class="btn btn-neon">Explore My Work</a>
+                <a href="#projects" data-page="contact" class="nav-link btn btn-neon">Let me Help You!</a>
             </div>
             </div>
 
@@ -1987,71 +1988,75 @@
             <p class="fade-in-delay-1" style="text-align:center; max-width:700px; margin:0 auto 3rem;">
             Have a project in mind or want to connect? Feel free to reach out through any of the channels below.
             </p>
-            
             <div class="contact-grid">
-            <div class="contact-info fade-in-delay-2">
-                <h3>Contact Information</h3>
-                <ul class="contact-list">
-                <li class="contact-item">
-                    <div class="contact-icon">
-                    <i class="fas fa-envelope"></i>
+                <div class="contact-info fade-in-delay-2">
+                    <h3>Contact Information</h3>
+                    <ul class="contact-list">
+                    <li class="contact-item">
+                        <div class="contact-icon">
+                        <i class="fas fa-envelope"></i>
+                        </div>
+                        <div>
+                        <h4>Email</h4>
+                        <p>Mohti8307521465@gmail.com</p>
+                        <p>Mohtidahmewal@gmail.com</p>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon">
+                        <i class="fab fa-linkedin"></i>
+                        </div>
+                        <div>
+                        <h4>LinkedIn</h4>
+                        <p><a href="https://www.linkedin.com/in/mohit-designs/" target="_blank">LinkedIn Profile</a></p>
+                        </div>
+                    </li>
+                    <li class="contact-item">
+                        <div class="contact-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                        </div>
+                        <div>
+                        <h4>Location</h4>
+                        <p>Haryana, India</p>
+                        </div>
+                    </li>
+                    </ul>
+                    
+                    <div class="social-links">
+                    <a href="https://www.instagram.com/design__master__/" class="social-link" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube" target="_blank"></i></a>
+                    <a href="https://www.linkedin.com/in/mohit-designs/" class="social-link" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="https://github.com/mohit1465/" class="social-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+                    <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter" target="_blank"></i></a>
                     </div>
-                    <div>
-                    <h4>Email</h4>
-                    <p>Mohti8307521465@gmail.com</p>
-                    <p>Mohtidahmewal@gmail.com</p>
-                    </div>
-                </li>
-                <li class="contact-item">
-                    <div class="contact-icon">
-                    <i class="fab fa-linkedin"></i>
-                    </div>
-                    <div>
-                    <h4>LinkedIn</h4>
-                    <p><a href="https://www.linkedin.com/in/mohit-designs/" target="_blank">LinkedIn Profile</a></p>
-                    </div>
-                </li>
-                <li class="contact-item">
-                    <div class="contact-icon">
-                    <i class="fas fa-map-marker-alt"></i>
-                    </div>
-                    <div>
-                    <h4>Location</h4>
-                    <p>Haryana, India</p>
-                    </div>
-                </li>
-                </ul>
+                </div>
                 
-                <div class="social-links">
-                <a href="https://www.instagram.com/design__master__/" class="social-link" title="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube" target="_blank"></i></a>
-                <a href="https://www.linkedin.com/in/mohit-designs/" class="social-link" title="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://github.com/mohit1465/" class="social-link" title="GitHub" target="_blank"><i class="fab fa-github"></i></a>
-                <a href="#" class="social-link" title="Twitter"><i class="fab fa-twitter" target="_blank"></i></a>
+                <div class="contact-form fade-in-delay-2">
+                    <form action="https://formsubmit.co/Mohit8307521465@gmail.com" method="POST" id="contactForm">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="box">
+                    <input type="hidden" name="_autoresponse" value="Thank you! I got your message. Will reply soon!">
+                
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="name" id="nameInput" required>
+                        <label for="nameInput" class="form-label">Your Name</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="email" class="form-control" name="email" id="emailInput" required>
+                        <label for="emailInput" class="form-label">Your Email</label>
+                    </div>
+                    <div class="form-group">
+                        <input type="text" class="form-control" name="subject" id="subjectInput" required>
+                        <label for="subjectInput" class="form-label">Subject</label>
+                    </div>
+                    <div class="form-group">
+                        <textarea class="form-control" name="message" id="messageInput" required></textarea>
+                        <label for="messageInput" class="form-label">Your Message</label>
+                    </div>
+                    <button type="submit" class="btn">Send Message</button>
+                    </form>
                 </div>
-            </div>
-            
-            <div class="contact-form fade-in-delay-2">
-                <form id="contactForm">
-                <div class="form-group">
-                    <input type="text" class="form-control" id="nameInput" required>
-                    <label for="nameInput" class="form-label">Your Name</label>
-                </div>
-                <div class="form-group">
-                    <input type="email" class="form-control" id="emailInput" required>
-                    <label for="emailInput" class="form-label">Your Email</label>
-                </div>
-                <div class="form-group">
-                    <input type="text" class="form-control" id="subjectInput" required>
-                    <label for="subjectInput" class="form-label">Subject</label>
-                </div>
-                <div class="form-group">
-                    <textarea class="form-control" id="messageInput" required></textarea>
-                    <label for="messageInput" class="form-label">Your Message</label>
-                </div>
-                <button type="submit" class="btn">Send Message</button>
-                </form>
-            </div>
+              
             </div>
         </div>
         </section>
@@ -2424,137 +2429,207 @@
         });
         }
         
-        // Gallery lightbox setup
+        // work Previewlightbox setup
         function setupworkPreview() {
-        const workItems = document.querySelectorAll('.work-item');
-        const lightbox = document.getElementById('workPreview');
-        const lightboxCloseBtn = document.getElementById('workPreviewCloseBtn');
-        
-        // Open lightbox when gallery item is clicked
-        workItems.forEach(item => {
-            item.addEventListener('click', () => {
-            const imgSrc = item.getAttribute('data-image');
+            const workItems = document.querySelectorAll('.work-item');
+            const workPreviewlightbox = document.getElementById('workPreview');
+            
+            // Open workPreviewlightbox when gallery item is clicked
+            workItems.forEach(item => {
+                item.addEventListener('click', () => {
+                const imgSrc = item.getAttribute('data-image');
+                console.log("imgSrc.src");
 
 
-            if (imgSrc.endsWith(".mp4")) {
-                lightbox.innerHTML = `
-                <button class="work-preview-close" id="workPreviewCloseBtn">
-                    <i class="fas fa-times"></i>
-                </button>
-                <video src="${imgSrc}" alt="" class="work-preview-vid" id="workPreviewVid" controls autoplay>
-                `;
-            } else {
-                lightbox.innerHTML = `
-                <button class="work-preview-close" id="workPreviewCloseBtn">
-                    <i class="fas fa-times"></i>
-                </button>
-                <img src="${imgSrc}" alt="" class="work-preview-img" id="workPreviewImg">
-                `;
+                if (imgSrc.endsWith(".mp4")) {
+                    workPreviewlightbox.innerHTML = `
+                    <button class="work-preview-close" id="workPreviewCloseBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <video src="${imgSrc}" alt="" class="work-preview-vid" id="workPreviewVid" controls autoplay>
+                    `;
+                } else {
+                    workPreviewlightbox.innerHTML = `
+                    <button class="work-preview-close" id="workPreviewCloseBtn">
+                        <i class="fas fa-times"></i>
+                    </button>
+                    <img src="${imgSrc}" alt="" class="work-preview-img" id="workPreviewImg">
+                    `;
+                }
+
+                workPreviewlightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                });
+            });
+
+            const workPreview = document.getElementById('workPreview');
+            
+            // Close workPreview
+            workPreview.addEventListener('click', () => {
+                workPreview.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close workPreview when clicking outside
+            workPreview.addEventListener('click', (e) => {
+            if (e.target === workPreview) {
+                workPreview.classList.remove('active');
+                document.body.style.overflow = 'auto';
             }
+            });
 
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
+        }
+
+        document.addEventListener("DOMContentLoaded", function () {
+            loadWorkItems();
+        });
+
+        function loadWorkItems(category = "all") {
+            let workContainer = document.querySelector(".work-container");
+            workContainer.innerHTML = "";
+
+            let filteredItems = category === "all" ? workItems : workItems.filter(item => item.category === category);
+
+            filteredItems.forEach(item => {
+                let itemDiv = document.createElement("div");
+                itemDiv.classList.add("work-item");
+                itemDiv.setAttribute("data-category", item.category);
+                itemDiv.setAttribute("data-image", item.src);
+
+                if (item.src.endsWith(".mp4")) {
+                    let video = document.createElement("video");
+                    video.src = item.src;
+                    video.controls = true;
+                    video.classList.add("work-image");
+                    itemDiv.appendChild(video);
+                } else {
+                    let img = document.createElement("img");
+                    img.src = item.src;
+                    img.classList.add("work-image");
+                    itemDiv.appendChild(img);
+                }
+
+                let text = document.createElement("div");
+                text.innerText = item.text;
+                text.classList.add("work-text");
+                itemDiv.appendChild(text);
+
+                workContainer.appendChild(itemDiv);
+            });
+
+            // 🧠 Reattach click events to new items
+            setupworkPreview();
+        }
+
+        document.querySelectorAll(".filter").forEach(button => {
+            button.addEventListener("click", function() {
+                document.querySelectorAll(".filter").forEach(btn => btn.classList.remove("active"));
+                this.classList.add("active");
+                loadWorkItems(this.getAttribute("data-category"));
             });
         });
-        }
+
         
-        const workPreview = document.getElementById('workPreview');
-        
-        // Close workPreview
-        workPreview.addEventListener('click', () => {
-        console.log("imgSrc.src");
-        workPreview.classList.remove('active');
-        document.body.style.overflow = 'auto';
-        });
-        
-        // Close workPreview when clicking outside
-        workPreview.addEventListener('click', (e) => {
-        if (e.target === workPreview) {
-            workPreview.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
-        });
         
         // Gallery lightbox setup
         function setupGalleryLightbox() {
-        const galleryItems = document.querySelectorAll('.gallery-item');
-        const lightbox = document.getElementById('lightbox');
-        const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
-        const lightboxImg = document.getElementById('lightboxImg');
-        
-        // Open lightbox when gallery item is clicked
-        galleryItems.forEach(item => {
-            item.addEventListener('click', () => {
-            const imgSrc = item.getAttribute('data-img');
-            lightboxImg.src = imgSrc;
-            lightbox.classList.add('active');
-            document.body.style.overflow = 'hidden';
+            const galleryItems = document.querySelectorAll('.gallery-item');
+            const lightbox = document.getElementById('lightbox');
+            const lightboxCloseBtn = document.getElementById('lightboxCloseBtn');
+            const lightboxImg = document.getElementById('lightboxImg');
+            
+            // Open lightbox when gallery item is clicked
+            galleryItems.forEach(item => {
+                item.addEventListener('click', () => {
+                const imgSrc = item.getAttribute('data-img');
+                lightboxImg.src = imgSrc;
+                lightbox.classList.add('active');
+                document.body.style.overflow = 'hidden';
+                });
             });
-        });
-        
-        // Close lightbox
-        lightboxCloseBtn.addEventListener('click', () => {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-        });
-        
-        // Close lightbox when clicking outside
-        lightbox.addEventListener('click', (e) => {
-            if (e.target === lightbox) {
-            lightbox.classList.remove('active');
-            document.body.style.overflow = 'auto';
-            }
-        });
+            
+            // Close lightbox
+            lightboxCloseBtn.addEventListener('click', () => {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close lightbox when clicking outside
+            lightbox.addEventListener('click', (e) => {
+                if (e.target === lightbox) {
+                lightbox.classList.remove('active');
+                document.body.style.overflow = 'auto';
+                }
+            });
         }
-        
-        // Contact form animation setup
+
         function setupContactForm() {
-        const formControls = document.querySelectorAll('.form-control');
-        const contactForm = document.getElementById('contactForm');
-        
-        // Add animation when input is focused or has value
-        formControls.forEach(control => {
-            // On focus
-            control.addEventListener('focus', () => {
-            control.classList.add('has-value');
+            const formControls = document.querySelectorAll('.form-control');
+            const contactForm = document.getElementById('contactForm');
+
+            // Input animations
+            formControls.forEach(control => {
+                control.addEventListener('focus', () => {
+                control.classList.add('has-value');
+                });
+
+                control.addEventListener('blur', () => {
+                if (control.value === '') {
+                    control.classList.remove('has-value');
+                }
+                });
+
+                // Check if already filled
+                if (control.value !== '') {
+                control.classList.add('has-value');
+                }
             });
-            
-            // On blur
-            control.addEventListener('blur', () => {
-            if (control.value === '') {
-                control.classList.remove('has-value');
-            }
+
+            // Real form submission (using FormSubmit API)
+            contactForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+
+                const name = document.getElementById('nameInput').value;
+                const email = document.getElementById('emailInput').value;
+                const subject = document.getElementById('subjectInput').value;
+                const message = document.getElementById('messageInput').value;
+
+                const formData = new FormData(contactForm);
+
+                fetch("https://formsubmit.co/Mohit8307521465@gmail.com", {
+                method: "POST",
+                body: formData
+                })
+                .then(response => {
+                if (response.ok) {
+                    contactForm.innerHTML = `
+                    <div style="text-align:center; padding:2rem;">
+                        <i class="fas fa-check-circle" style="font-size:3rem; color:var(--primary); margin-bottom:1rem;"></i>
+                        <h3>Message Sent Successfully!</h3>
+                        <p>Thank you for your message, ${name}. I'll get back to you as soon as possible.</p>
+                    </div>
+                    `;
+                } else {
+                    contactForm.innerHTML = `
+                    <div style="text-align:center; padding:2rem;">
+                        <i class="fas fa-exclamation-circle" style="font-size:3rem; color:red; margin-bottom:1rem;"></i>
+                        <h3>Message Failed!</h3>
+                        <p>Sorry ${name}, there was a problem. Please try again later.</p>
+                    </div>
+                    `;
+                }
+                })
+                .catch(error => {
+                console.error("Form Error:", error);
+                contactForm.innerHTML = `
+                    <div style="text-align:center; padding:2rem;">
+                    <i class="fas fa-exclamation-circle" style="font-size:3rem; color:red; margin-bottom:1rem;"></i>
+                    <h3>Something went wrong!</h3>
+                    <p>Sorry ${name}, we couldn't send your message. Try again later.</p>
+                    </div>
+                `;
+                });
             });
-            
-            // Check initial state
-            if (control.value !== '') {
-            control.classList.add('has-value');
-            }
-        });
-        
-        // Form submission
-        contactForm.addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            // Get form values
-            const name = document.getElementById('nameInput').value;
-            const email = document.getElementById('emailInput').value;
-            const subject = document.getElementById('subjectInput').value;
-            const message = document.getElementById('messageInput').value;
-            
-            // Here you would typically send the form data to a server
-            // For this demo, we'll just log it to console and show a success message
-            console.log({name, email, subject, message});
-            
-            // Show success message
-            contactForm.innerHTML = `
-            <div style="text-align:center; padding:2rem;">
-                <i class="fas fa-check-circle" style="font-size:3rem; color:var(--primary); margin-bottom:1rem;"></i>
-                <h3>Message Sent Successfully!</h3>
-                <p>Thank you for your message, ${name}. I'll get back to you as soon as possible.</p>
-            </div>
-            `;
-        });
         }
         
         // Scroll effects setup
@@ -2598,70 +2673,24 @@
         
         // Project randomization (adapted from original code)
         function update() {
-        const projects = document.querySelectorAll('.project-item');
-        
-        projects.forEach(project => {
-            // Get random rotation and translation
-            const randomRotate = Math.random() * 10 - 5; // -5 to 5 degrees
-            const randomTranslateY = Math.random() * 20 - 10; // -10px to 10px
+            const projects = document.querySelectorAll('.project-item');
             
-            // Apply random animation
-            project.style.transition = 'transform 0.5s ease';
-            project.style.transform = `translateY(${randomTranslateY}px) rotate(${randomRotate}deg)`;
-            
-            // Reset after animation
-            setTimeout(() => {
-            project.style.transition = 'transform 0.3s ease';
-            project.style.transform = 'translateY(0) rotate(0deg)';
-            }, 500);
-        });
-        }
-
-        document.addEventListener("DOMContentLoaded", function () {
-            loadWorkItems();
-        });
-
-        function loadWorkItems(category = "all") {
-            let workContainer = document.querySelector(".work-container");
-            workContainer.innerHTML = "";
-
-            let filteredItems = category === "all" ? workItems : workItems.filter(item => item.category === category);
-
-            filteredItems.forEach(item => {
-                let itemDiv = document.createElement("div");
-                itemDiv.classList.add("work-item");
-                itemDiv.setAttribute("data-category", item.category);
-                itemDiv.setAttribute("data-image", item.src);
-
-                if (item.src.endsWith(".mp4")) {
-                    let video = document.createElement("video");
-                    video.src = item.src;
-                    video.controls = true;
-                    video.classList.add("work-image");
-                    itemDiv.appendChild(video);
-                } else {
-                    let img = document.createElement("img");
-                    img.src = item.src;
-                    img.classList.add("work-image");
-                    itemDiv.appendChild(img);
-                }
-
-                let text = document.createElement("div");
-                text.innerText = item.text;
-                text.classList.add("work-text");
-                itemDiv.appendChild(text);
-
-                workContainer.appendChild(itemDiv);
+            projects.forEach(project => {
+                // Get random rotation and translation
+                const randomRotate = Math.random() * 10 - 5; // -5 to 5 degrees
+                const randomTranslateY = Math.random() * 20 - 10; // -10px to 10px
+                
+                // Apply random animation
+                project.style.transition = 'transform 0.5s ease';
+                project.style.transform = `translateY(${randomTranslateY}px) rotate(${randomRotate}deg)`;
+                
+                // Reset after animation
+                setTimeout(() => {
+                project.style.transition = 'transform 0.3s ease';
+                project.style.transform = 'translateY(0) rotate(0deg)';
+                }, 500);
             });
         }
-
-        document.querySelectorAll(".filter").forEach(button => {
-            button.addEventListener("click", function() {
-                document.querySelectorAll(".filter").forEach(btn => btn.classList.remove("active"));
-                this.classList.add("active");
-                loadWorkItems(this.getAttribute("data-category"));
-            });
-        });
 
         const cursorMid = document.querySelector('.custom-cursorMid');
             document.addEventListener('mousemove', (e) => {
