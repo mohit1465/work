@@ -30,7 +30,6 @@
             { src: "assets/work/Thumbnails/thumbnail (7).png", category: "thumbnail", text: "Thumbnail 1" },
             { src: "assets/work/Thumbnails/thumbnail (8).png", category: "thumbnail", text: "Thumbnail 1" },
             { src: "assets/work/Thumbnails/thumbnail (9).png", category: "thumbnail", text: "Thumbnail 1" },
-            { src: "assets/work/Thumbnails/thumbnail (10).png", category: "thumbnail", text: "Thumbnail 1" },
 
             { src: "assets/work/ui-designs/UI (1).mp4", category: "UI", text: "UI 1" },
             { src: "assets/work/ui-designs/UI (1).png", category: "UI", text: "UI 1" },
