@@ -99,6 +99,14 @@
         <img src="" alt="" class="lightbox-img" id="lightboxImg">
     </div>
 
+    <!-- Certificate Viewer Modal -->
+    <div class="certificate-modal" id="certificateModal">
+        <button class="certificate-modal-close" id="certificateModalCloseBtn">
+            <i class="fas fa-times"></i>
+        </button>
+        <img src="" alt="" class="certificate-modal-img" id="certificateModalImg">
+    </div>
+
     <!-- Header -->
     <header class="header">
         <div class="container">
@@ -227,38 +235,115 @@
                 </div>
                 </div>
 
+                <h2 class="fade-in">Certificates</h2>
+                <div class="certificates-grid fade-in-delay-2">
+                    <div class="certificate-item" data-certificate="assets/certificates/web-tree.png">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h3>Web Development</h3>
+                            <p>Complete Web Development Bootcamp</p>
+                            <span class="certificate-issuer">Udemy</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-item" data-certificate="assets/certificates/uiux.jpg">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h3>UI/UX Design</h3>
+                            <p>UI/UX Design Fundamentals</p>
+                            <span class="certificate-issuer">Google</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-item" data-certificate="assets/certificates/graphic.jpg">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h3>Graphic Design</h3>
+                            <p>Professional Graphic Design</p>
+                            <span class="certificate-issuer">Adobe</span>
+                        </div>
+                    </div>
+                    
+                    <div class="certificate-item" data-certificate="assets/certificates/python.jpg">
+                        <div class="certificate-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certificate-content">
+                            <h3>Python Programming</h3>
+                            <p>Python for Data Science</p>
+                            <span class="certificate-issuer">Coursera</span>
+                        </div>
+                    </div>
+                </div>
+
                 <h2 class="fade-in">My Past Experience</h2>
                 <p class="fade-in-delay-1">
-                I specialize in creating engaging designs, websites, and AI-driven solutions.
+                    I specialize in creating engaging designs, websites, and AI-driven solutions.
                 </p>
                 
-                <div class="timeline fade-in-delay-3">
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                    <h3>Techgeekz Services</h3>
-                    <p>T-Shirt Designer - 1 Year</p>
-                    <p>Created custom t-shirt designs and graphics for various clients.</p>
+                <div class="experience-grid fade-in-delay-3">
+                    <div class="experience-card">
+                        <div class="experience-icon">
+                            <i class="fas fa-tshirt"></i>
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <h3>Techgeekz Services</h3>
+                                <span class="experience-badge">1 Year</span>
+                            </div>
+                            <h4>T-Shirt Designer</h4>
+                            <p>Created custom t-shirt designs and graphics for various clients.</p>
+                            <div class="experience-tags">
+                                <span>Graphic Design</span>
+                                <span>Custom Artwork</span>
+                                <span>Client Projects</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                    <h3>KK Promotions</h3>
-                    <p>Senior Graphic Designer</p>
-                    <p>Designed promotional materials, social media graphics, and marketing collateral.</p>
+
+                    <div class="experience-card">
+                        <div class="experience-icon">
+                            <i class="fas fa-bullhorn"></i>
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <h3>KK Promotions</h3>
+                                <span class="experience-badge">Senior</span>
+                            </div>
+                            <h4>Senior Graphic Designer</h4>
+                            <p>Designed promotional materials, social media graphics, and marketing collateral.</p>
+                            <div class="experience-tags">
+                                <span>Marketing</span>
+                                <span>Social Media</span>
+                                <span>Brand Design</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content">
-                    <h3>Cryptonet Technologies Pvt. Ltd.</h3>
-                    <p>2D Character Designer - Internship</p>
-                    <p>Designed 2D characters and assets for mobile games and applications.</p>
+
+                    <div class="experience-card">
+                        <div class="experience-icon">
+                            <i class="fas fa-gamepad"></i>
+                        </div>
+                        <div class="experience-content">
+                            <div class="experience-header">
+                                <h3>Cryptonet Technologies</h3>
+                                <span class="experience-badge">Internship</span>
+                            </div>
+                            <h4>2D Character Designer</h4>
+                            <p>Designed 2D characters and assets for mobile games and applications.</p>
+                            <div class="experience-tags">
+                                <span>Game Design</span>
+                                <span>Character Art</span>
+                                <span>2D Animation</span>
+                            </div>
+                        </div>
                     </div>
-                </div>
                 </div>
             </div>
             </div>
@@ -299,85 +384,72 @@
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">PrimeX</h3>
-                    <p class="project-description">Multi-feature tool website with advanced functionality.</p>
+                    <p class="project-description">A comprehensive suite of web development tools including text editor, image editor, image resizer, and AI assistant.</p>
                     <div class="project-tags">
                     <span class="project-tag">HTML</span>
                     <span class="project-tag">CSS</span>
                     <span class="project-tag">JavaScript</span>
-                    </div>
-                </div>
-                </div>
-                
-                <div class="project-item" data-project="ichha">
-                <div class="project-img">
-                    <img src="https://placehold.co/600x400/FF6584/FFFFFF?text=ICHHA+AI" alt="ICHHA AI" loading="lazy">
-                </div>
-                <div class="project-content">
-                    <h3 class="project-title">ICHHA AI</h3>
-                    <p class="project-description">Speech-to-text AI tool using Groq AI technology.</p>
-                    <div class="project-tags">
-                    <span class="project-tag">React</span>
                     <span class="project-tag">AI</span>
-                    <span class="project-tag">Groq</span>
                     </div>
                 </div>
                 </div>
                 
-                <div class="project-item" data-project="posters">
+                <div class="project-item" data-project="text-editor">
                 <div class="project-img">
-                    <img src="https://placehold.co/600x400/00F5A0/000000?text=Animated+Posters" alt="Animated Posters" loading="lazy">
+                    <img src="https://placehold.co/600x400/FF6584/FFFFFF?text=Text+Editor" alt="Text Editor" loading="lazy">
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Animated Posters</h3>
-                    <p class="project-description">Collection of animated posters and social media designs.</p>
+                    <h3 class="project-title">Text Editor</h3>
+                    <p class="project-description">Advanced code and text editor with syntax highlighting, code folding, and real-time preview.</p>
                     <div class="project-tags">
-                    <span class="project-tag">Motion Graphics</span>
-                    <span class="project-tag">Social Media</span>
+                    <span class="project-tag">Code Editor</span>
+                    <span class="project-tag">Syntax Highlighting</span>
+                    <span class="project-tag">File Management</span>
                     </div>
                 </div>
                 </div>
                 
-                <div class="project-item" data-project="portfolio">
+                <div class="project-item" data-project="image-editor">
                 <div class="project-img">
-                    <img src="https://placehold.co/600x400/6C63FF/FFFFFF?text=Portfolio" alt="Portfolio Website" loading="lazy">
+                    <img src="https://placehold.co/600x400/00F5A0/000000?text=Image+Editor" alt="Image Editor" loading="lazy">
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">Portfolio Website</h3>
-                    <p class="project-description">This interactive portfolio website with modern effects.</p>
+                    <h3 class="project-title">Image Editor</h3>
+                    <p class="project-description">Professional image editing tool with advanced features like filters, transformations, and batch processing.</p>
                     <div class="project-tags">
-                    <span class="project-tag">HTML</span>
-                    <span class="project-tag">CSS</span>
-                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">Image Processing</span>
+                    <span class="project-tag">Filters</span>
+                    <span class="project-tag">Batch Processing</span>
                     </div>
                 </div>
                 </div>
                 
-                <div class="project-item" data-project="ecommerce">
+                <div class="project-item" data-project="image-resizer">
                 <div class="project-img">
-                    <img src="https://placehold.co/600x400/FF6584/FFFFFF?text=E-Commerce" alt="E-Commerce Website" loading="lazy">
+                    <img src="https://placehold.co/600x400/6C63FF/FFFFFF?text=Image+Resizer" alt="Image Resizer" loading="lazy">
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">E-Commerce Website</h3>
-                    <p class="project-description">Fully functional e-commerce platform with product catalog.</p>
+                    <h3 class="project-title">Image Resizer</h3>
+                    <p class="project-description">Specialized tool for batch image resizing with custom dimensions and format conversion.</p>
                     <div class="project-tags">
-                    <span class="project-tag">HTML</span>
-                    <span class="project-tag">CSS</span>
-                    <span class="project-tag">JavaScript</span>
+                    <span class="project-tag">Image Resizing</span>
+                    <span class="project-tag">Batch Processing</span>
+                    <span class="project-tag">Format Conversion</span>
                     </div>
                 </div>
                 </div>
                 
-                <div class="project-item" data-project="brochure">
+                <div class="project-item" data-project="krish-ai">
                 <div class="project-img">
-                    <img src="https://placehold.co/600x400/00F5A0/000000?text=UI+Design" alt="UI Design" loading="lazy">
+                    <img src="https://placehold.co/600x400/FF6584/FFFFFF?text=Krish+AI" alt="Krish AI" loading="lazy">
                 </div>
                 <div class="project-content">
-                    <h3 class="project-title">UI/UX Design</h3>
-                    <p class="project-description">Modern UI/UX designs for web and mobile applications.</p>
+                    <h3 class="project-title">Krish AI (Beta)</h3>
+                    <p class="project-description">Intelligent AI assistant for code generation, explanation, and optimization.</p>
                     <div class="project-tags">
-                    <span class="project-tag">Figma</span>
-                    <span class="project-tag">UI/UX</span>
-                    <span class="project-tag">Design</span>
+                    <span class="project-tag">AI</span>
+                    <span class="project-tag">Code Generation</span>
+                    <span class="project-tag">NLP</span>
                     </div>
                 </div>
                 </div>

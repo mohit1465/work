@@ -44,54 +44,46 @@ let workItems = [
 
 // Project Data
 const projectsData = {
-'primex': {
-    title: 'PrimeX',
-    description: 'Multi-feature tool website with advanced functionality. This project showcases my skills in creating complex web applications with modern UI and seamless user experience. Features include data analysis tools, custom calculators, and interactive visualizations.',
-    img: 'https://placehold.co/800x500/6C63FF/FFFFFF?text=PrimeX',
-    tags: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
-    liveLink: 'mohit1465.github.io/HelpDesk.github.io',
-    codeLink: 'https://github.com/mohit1465/HelpDesk.github.io'
-},
-'ichha': {
-    title: 'ICHHA AI',
-    description: 'Speech-to-text AI tool using Groq AI technology. This innovative application allows users to convert speech to text in real-time with high accuracy. I designed and developed the interface and integrated the AI technology to create a seamless user experience.',
-    img: 'https://placehold.co/800x500/FF6584/FFFFFF?text=ICHHA+AI',
-    tags: ['React', 'AI', 'Speech Recognition', 'User Experience'],
-    liveLink: '#',
-    codeLink: '#'
-},
-'posters': {
-    title: 'Animated Posters',
-    description: 'Collection of animated posters and social media designs created for various clients. These visually striking designs combine modern aesthetics with motion graphics to create engaging content for digital platforms.',
-    img: 'https://placehold.co/800x500/00F5A0/000000?text=Animated+Posters',
-    tags: ['Motion Graphics', 'After Effects', 'Photoshop', 'Social Media','Canva'],
-    liveLink: '#',
-    codeLink: '#'
-},
-'portfolio': {
-    title: 'Portfolio Website',
-    description: 'This interactive portfolio website with modern effects and transitions. Designed and developed from scratch using HTML, CSS, and JavaScript. Features include smooth animations, 3D effects, responsive design, and interactive elements.',
-    img: 'https://placehold.co/800x500/6C63FF/FFFFFF?text=Portfolio',
-    tags: ['HTML', 'CSS', 'JavaScript', '3D Effects'],
-    liveLink: '#',
-    codeLink: '#'
-},
-'ecommerce': {
-    title: 'E-Commerce Website',
-    description: 'Fully functional e-commerce platform with product catalog and cart functionality. This project demonstrates my ability to create comprehensive web applications with complex functionality and intuitive user interfaces.',
-    img: 'https://placehold.co/800x500/FF6584/FFFFFF?text=E-Commerce',
-    tags: ['HTML', 'CSS', 'JavaScript', 'E-Commerce'],
-    liveLink: '#',
-    codeLink: '#'
-},
-'brochure': {
-    title: 'UI/UX Design',
-    description: 'Modern UI/UX designs for web and mobile applications. These designs focus on user experience, accessibility, and modern aesthetic principles to create engaging and intuitive interfaces.',
-    img: 'https://placehold.co/800x500/00F5A0/000000?text=UI+Design',
-    tags: ['Figma', 'UI/UX', 'Design', 'Prototyping'],
-    liveLink: '#',
-    codeLink: '#'
-}
+    'primex': {
+        title: 'PrimeX',
+        description: 'A comprehensive suite of web development tools including text editor, image editor, image resizer, and AI assistant. Features include dark/light theme support, responsive design, cloud integration, and real-time preview.',
+        img: 'https://placehold.co/800x500/6C63FF/FFFFFF?text=PrimeX',
+        tags: ['HTML', 'CSS', 'JavaScript', 'Responsive Design'],
+        liveLink: 'https://mohit1465.github.io/HelpDesk.github.io/',
+        codeLink: 'https://github.com/mohit1465/HelpDesk.github.io'
+    },
+    'text-editor': {
+        title: 'Text Editor',
+        description: 'Advanced code and text editor with syntax highlighting, code folding, and real-time preview. Features include file management, directory structure, auto-completion, and theme customization.',
+        img: 'https://placehold.co/800x500/FF6584/FFFFFF?text=Text+Editor',
+        tags: ['Code Editor', 'Syntax Highlighting', 'File Management'],
+        liveLink: 'https://mohit1465.github.io/HelpDesk.github.io/text-editor.html',
+        codeLink: 'https://github.com/mohit1465/HelpDesk.github.io'
+    },
+    'image-editor': {
+        title: 'Image Editor',
+        description: 'Professional image editing tool with advanced features like filters, transformations, and batch processing. Includes basic adjustments, transform tools, and export options.',
+        img: 'https://placehold.co/800x500/00F5A0/000000?text=Image+Editor',
+        tags: ['Image Processing', 'Filters', 'Batch Processing'],
+        liveLink: 'https://mohit1465.github.io/HelpDesk.github.io/image-editor.html',
+        codeLink: 'https://github.com/mohit1465/HelpDesk.github.io'
+    },
+    'image-resizer': {
+        title: 'Image Resizer',
+        description: 'Specialized tool for batch image resizing with custom dimensions and format conversion. Features include aspect ratio maintenance, quality control, and multiple export formats.',
+        img: 'https://placehold.co/800x500/6C63FF/FFFFFF?text=Image+Resizer',
+        tags: ['Image Resizing', 'Batch Processing', 'Format Conversion'],
+        liveLink: 'https://mohit1465.github.io/HelpDesk.github.io/image-resizer.html',
+        codeLink: 'https://github.com/mohit1465/HelpDesk.github.io'
+    },
+    'krish-ai': {
+        title: 'Krish AI (Beta)',
+        description: 'Intelligent AI assistant for code generation, explanation, and optimization. Features include natural language processing, bug detection, and code suggestions.',
+        img: 'https://placehold.co/800x500/FF6584/FFFFFF?text=Krish+AI',
+        tags: ['AI', 'Code Generation', 'NLP'],
+        liveLink: 'https://mohit1465.github.io/HelpDesk.github.io/Krish.html',
+        codeLink: 'https://github.com/mohit1465/HelpDesk.github.io'
+    }
 };
 
 
@@ -108,6 +100,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initNavigation();
     initTheme();
     setupMobileNav();
+    setupCertificateViewer();
 
     // Setup lazy loading for images
     setupLazyLoading();
@@ -566,7 +559,7 @@ const footer = document.querySelector('.footer');
         let windowHeight = window.innerHeight;
         let documentHeight = document.documentElement.scrollHeight;
 
-        if (scrollTop + windowHeight >= documentHeight - 10) {
+        if (scrollTop + windowHeight >= documentHeight - 150) {
             footer.classList.add('footerScrolled');
         } else {
             footer.classList.remove('footerScrolled')
@@ -650,4 +643,71 @@ function animateCursor() {
 }
 
 animateCursor();
+
+// Certificate Viewer Setup
+function setupCertificateViewer() {
+    const certificateItems = document.querySelectorAll('.certificate-item');
+    const certificateModal = document.getElementById('certificateModal');
+    const certificateModalImg = document.getElementById('certificateModalImg');
+    const certificateModalCloseBtn = document.getElementById('certificateModalCloseBtn');
+
+    certificateItems.forEach(item => {
+        item.addEventListener('click', () => {
+            const certificatePath = item.getAttribute('data-certificate');
+            
+            // Show loading state
+            certificateModalImg.src = '';
+            certificateModalImg.style.opacity = '0';
+            certificateModal.classList.add('active');
+            document.body.style.overflow = 'hidden';
+
+            // Load the image
+            const img = new Image();
+            img.onload = () => {
+                certificateModalImg.src = certificatePath;
+                certificateModalImg.style.opacity = '1';
+            };
+            img.onerror = () => {
+                certificateModalImg.src = 'assets/error.png'; // Fallback image
+                certificateModalImg.style.opacity = '1';
+                console.error('Failed to load certificate image:', certificatePath);
+            };
+            img.src = certificatePath;
+        });
+    });
+
+    // Close modal when clicking close button
+    certificateModalCloseBtn.addEventListener('click', () => {
+        certificateModal.classList.remove('active');
+        document.body.style.overflow = 'auto';
+        // Reset image after modal is closed
+        setTimeout(() => {
+            certificateModalImg.src = '';
+        }, 300);
+    });
+
+    // Close modal when clicking outside
+    certificateModal.addEventListener('click', (e) => {
+        if (e.target === certificateModal) {
+            certificateModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            // Reset image after modal is closed
+            setTimeout(() => {
+                certificateModalImg.src = '';
+            }, 300);
+        }
+    });
+
+    // Close modal with Escape key
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && certificateModal.classList.contains('active')) {
+            certificateModal.classList.remove('active');
+            document.body.style.overflow = 'auto';
+            // Reset image after modal is closed
+            setTimeout(() => {
+                certificateModalImg.src = '';
+            }, 300);
+        }
+    });
+}
 
