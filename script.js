@@ -102,40 +102,41 @@
 
         // Wait for page load
         window.addEventListener('load', () => {
-        // Remove preloader
-        setTimeout(() => {
-            document.querySelector('.preloader').classList.add('fade-out');
-        }, 1000);
+        // Remove preloader immediately
+        document.querySelector('.preloader').classList.add('fade-out');
         
-        // Initialize particles
-        initParticles();
-        
-        // Initialize navigation
+        // Initialize essential features first
         initNavigation();
-        
-        // Initialize theme
         initTheme();
-        
-        // Setup mobile navigation
         setupMobileNav();
         
-        // Initialize skill progress bars
-        initSkillBars();
+        // Initialize non-critical features after a small delay
+        setTimeout(() => {
+            initParticles();
+            initSkillBars();
+            setupProjectModals();
+            setupGalleryLightbox();
+            setupworkPreview();
+            setupContactForm();
+            setupScrollEffects();
+        }, 100);
+        });
         
-        // Setup project modals
-        setupProjectModals();
-        
-        // Setup gallery lightbox
-        setupGalleryLightbox();
+        // Add lazy loading for images
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('img[data-src]');
+            const imageObserver = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const img = entry.target;
+                        img.src = img.dataset.src;
+                        img.removeAttribute('data-src');
+                        observer.unobserve(img);
+                    }
+                });
+            });
 
-        // Setup work preview
-        setupworkPreview();
-        
-        // Setup contact form animation
-        setupContactForm();
-        
-        // Setup scroll effects
-        setupScrollEffects();
+            images.forEach(img => imageObserver.observe(img));
         });
         
         // Initialize 3D particles background
@@ -143,8 +144,11 @@
         const particlesContainer = document.getElementById('particlesContainer');
         const colors = ['rgba(108, 99, 255, 0.3)', 'rgba(255, 101, 132, 0.3)', 'rgba(0, 245, 160, 0.3)'];
         
+        // Reduce number of particles for better performance
+        const particleCount = window.innerWidth < 768 ? 20 : 30;
+        
         // Create particles
-        for (let i = 0; i < 50; i++) {
+        for (let i = 0; i < particleCount; i++) {
             const particle = document.createElement('div');
             particle.className = 'particle';
             
@@ -152,17 +156,14 @@
             const posX = Math.random() * 100;
             const posY = Math.random() * 100;
             
-            // Random size
-            const size = Math.random() * 15 + 5;
+            // Smaller size range for better performance
+            const size = Math.random() * 8 + 3;
             
             // Random color
             const color = colors[Math.floor(Math.random() * colors.length)];
             
-            // Random animation delay
-            const delay = Math.random() * 10;
-            
-            // Random animation duration
-            const duration = Math.random() * 20 + 10;
+            // Shorter animation duration
+            const duration = Math.random() * 15 + 5;
             
             // Set styles
             particle.style.cssText = `

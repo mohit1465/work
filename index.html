@@ -5,11 +5,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mohit's Portfolio</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap">
-
+    <!-- Preload critical assets -->
+    <link rel="preload" href="style.css" as="style">
+    <link rel="preload" href="script.js" as="script">
+    <link rel="preload" href="assets/Hungry.gif" as="image">
+    
+    <!-- Load critical CSS -->
     <link rel="stylesheet" href="style.css">
+    
+    <!-- Defer non-critical CSS -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" media="print" onload="this.media='all'">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@700;800;900&display=swap" media="print" onload="this.media='all'">
 
     </head>
     <body>
@@ -253,7 +260,7 @@
             <div class="projects-grid">
                 <div class="project-item" data-project="primex">
                 <div class="project-img">
-                    <img src="https://placehold.co/600x400/6C63FF/FFFFFF?text=PrimeX" alt="PrimeX">
+                    <img src="https://placehold.co/600x400/6C63FF/FFFFFF?text=PrimeX" alt="PrimeX" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">PrimeX</h3>
@@ -268,7 +275,7 @@
                 
                 <div class="project-item" data-project="ichha">
                 <div class="project-img">
-                    <img src="https://placehold.co/600x400/FF6584/FFFFFF?text=ICHHA+AI" alt="ICHHA AI">
+                    <img src="https://placehold.co/600x400/FF6584/FFFFFF?text=ICHHA+AI" alt="ICHHA AI" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">ICHHA AI</h3>
@@ -283,7 +290,7 @@
                 
                 <div class="project-item" data-project="posters">
                 <div class="project-img">
-                    <img src="https://placehold.co/600x400/00F5A0/000000?text=Animated+Posters" alt="Animated Posters">
+                    <img src="https://placehold.co/600x400/00F5A0/000000?text=Animated+Posters" alt="Animated Posters" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Animated Posters</h3>
@@ -297,7 +304,7 @@
                 
                 <div class="project-item" data-project="portfolio">
                 <div class="project-img">
-                    <img src="https://placehold.co/600x400/6C63FF/FFFFFF?text=Portfolio" alt="Portfolio Website">
+                    <img src="https://placehold.co/600x400/6C63FF/FFFFFF?text=Portfolio" alt="Portfolio Website" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">Portfolio Website</h3>
@@ -312,7 +319,7 @@
                 
                 <div class="project-item" data-project="ecommerce">
                 <div class="project-img">
-                    <img src="https://placehold.co/600x400/FF6584/FFFFFF?text=E-Commerce" alt="E-Commerce Website">
+                    <img src="https://placehold.co/600x400/FF6584/FFFFFF?text=E-Commerce" alt="E-Commerce Website" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">E-Commerce Website</h3>
@@ -327,7 +334,7 @@
                 
                 <div class="project-item" data-project="brochure">
                 <div class="project-img">
-                    <img src="https://placehold.co/600x400/00F5A0/000000?text=UI+Design" alt="UI Design">
+                    <img src="https://placehold.co/600x400/00F5A0/000000?text=UI+Design" alt="UI Design" loading="lazy">
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">UI/UX Design</h3>
