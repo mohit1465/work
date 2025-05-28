@@ -95,30 +95,49 @@ const projectsData = {
 };
 
 
-// Wait for page load
-window.addEventListener('load', () => {
-    // Remove preloader immediately
-    document.querySelector('.preloader').classList.add('fade-out');
+// Initialize essential features immediately
+document.addEventListener('DOMContentLoaded', () => {
+    // Remove preloader
+    const preloader = document.querySelector('.preloader');
+    if (preloader) {
+        preloader.classList.add('fade-out');
+        setTimeout(() => preloader.remove(), 300);
+    }
 
-    // Initialize essential features first
+    // Initialize critical features
     initNavigation();
     initTheme();
     setupMobileNav();
 
-    // Initialize non-critical features after a small delay
-    setTimeout(() => {
-        initParticles();
-        initSkillBars();
-        setupProjectModals();
-        setupGalleryLightbox();
-        setupworkPreview();
-        setupContactForm();
-        setupScrollEffects();
-    }, 100);
+    // Setup lazy loading for images
+    setupLazyLoading();
+
+    // Initialize non-critical features with requestIdleCallback
+    if ('requestIdleCallback' in window) {
+        requestIdleCallback(() => {
+            initParticles();
+            initSkillBars();
+            setupProjectModals();
+            setupGalleryLightbox();
+            setupworkPreview();
+            setupContactForm();
+            setupScrollEffects();
+        });
+    } else {
+        setTimeout(() => {
+            initParticles();
+            initSkillBars();
+            setupProjectModals();
+            setupGalleryLightbox();
+            setupworkPreview();
+            setupContactForm();
+            setupScrollEffects();
+        }, 100);
+    }
 });
 
-// Add lazy loading for images
-document.addEventListener('DOMContentLoaded', () => {
+// Setup lazy loading for images
+function setupLazyLoading() {
     const images = document.querySelectorAll('img[data-src]');
     const imageObserver = new IntersectionObserver((entries, observer) => {
         entries.forEach(entry => {
@@ -129,51 +148,48 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(img);
             }
         });
+    }, {
+        rootMargin: '50px 0px',
+        threshold: 0.1
     });
 
     images.forEach(img => imageObserver.observe(img));
-});
-
-// Initialize 3D particles background
-function initParticles() {
-const particlesContainer = document.getElementById('particlesContainer');
-const colors = ['rgba(108, 99, 255, 0.3)', 'rgba(255, 101, 132, 0.3)', 'rgba(0, 245, 160, 0.3)'];
-
-// Reduce number of particles for better performance
-const particleCount = window.innerWidth < 768 ? 20 : 30;
-
-// Create particles
-for (let i = 0; i < particleCount; i++) {
-    const particle = document.createElement('div');
-    particle.className = 'particle';
-    
-    // Random position
-    const posX = Math.random() * 100;
-    const posY = Math.random() * 100;
-    
-    // Smaller size range for better performance
-    const size = Math.random() * 8 + 3;
-    
-    // Random color
-    const color = colors[Math.floor(Math.random() * colors.length)];
-    
-    // Shorter animation duration
-    const duration = Math.random() * 15 + 5;
-    
-    // Set styles
-    particle.style.cssText = `
-    left: ${posX}%;
-    top: ${posY}%;
-    width: ${size}px;
-    height: ${size}px;
-    background: ${color};
-    animation-delay: ${delay}s;
-    animation-duration: ${duration}s;
-    box-shadow: 0 0 ${size}px ${color};
-    `;
-    
-    particlesContainer.appendChild(particle);
 }
+
+// Initialize 3D particles background with performance optimizations
+function initParticles() {
+    const particlesContainer = document.getElementById('particlesContainer');
+    if (!particlesContainer) return;
+
+    const colors = ['rgba(108, 99, 255, 0.3)', 'rgba(255, 101, 132, 0.3)', 'rgba(0, 245, 160, 0.3)'];
+    const particleCount = window.innerWidth < 768 ? 15 : 25; // Reduced particle count
+    const fragment = document.createDocumentFragment();
+
+    for (let i = 0; i < particleCount; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'particle';
+        
+        const posX = Math.random() * 100;
+        const posY = Math.random() * 100;
+        const size = Math.random() * 6 + 2; // Smaller particles
+        const color = colors[Math.floor(Math.random() * colors.length)];
+        const duration = Math.random() * 10 + 5; // Shorter animations
+        
+        particle.style.cssText = `
+            left: ${posX}%;
+            top: ${posY}%;
+            width: ${size}px;
+            height: ${size}px;
+            background: ${color};
+            animation-duration: ${duration}s;
+            box-shadow: 0 0 ${size}px ${color};
+            will-change: transform;
+        `;
+        
+        fragment.appendChild(particle);
+    }
+    
+    particlesContainer.appendChild(fragment);
 }
 
 // Initialize multi-page navigation
