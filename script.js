@@ -95,49 +95,29 @@ const projectsData = {
 };
 
 
-// Optimize page load
+// Wait for page load
 window.addEventListener('load', () => {
     // Remove preloader immediately
     document.querySelector('.preloader').classList.add('fade-out');
 
     // Initialize essential features first
-    requestAnimationFrame(() => {
-        initNavigation();
-        initTheme();
-        setupMobileNav();
-    });
+    initNavigation();
+    initTheme();
+    setupMobileNav();
 
-    // Initialize non-critical features with IntersectionObserver
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const target = entry.target;
-                if (target.classList.contains('particles-container')) {
-                    initParticles();
-                    observer.unobserve(target);
-                } else if (target.classList.contains('skills-grid')) {
-                    initSkillBars();
-                    observer.unobserve(target);
-                }
-            }
-        });
-    });
-
-    // Observe elements for lazy initialization
-    const particlesContainer = document.getElementById('particlesContainer');
-    const skillsGrid = document.querySelector('.skills-grid');
-    if (particlesContainer) observer.observe(particlesContainer);
-    if (skillsGrid) observer.observe(skillsGrid);
-
-    // Initialize other features
-    setupProjectModals();
-    setupGalleryLightbox();
-    setupworkPreview();
-    setupContactForm();
-    setupScrollEffects();
+    // Initialize non-critical features after a small delay
+    setTimeout(() => {
+        initParticles();
+        initSkillBars();
+        setupProjectModals();
+        setupGalleryLightbox();
+        setupworkPreview();
+        setupContactForm();
+        setupScrollEffects();
+    }, 100);
 });
 
-// Optimize image loading
+// Add lazy loading for images
 document.addEventListener('DOMContentLoaded', () => {
     const images = document.querySelectorAll('img[data-src]');
     const imageObserver = new IntersectionObserver((entries, observer) => {
@@ -149,53 +129,51 @@ document.addEventListener('DOMContentLoaded', () => {
                 observer.unobserve(img);
             }
         });
-    }, {
-        rootMargin: '50px 0px',
-        threshold: 0.1
     });
 
     images.forEach(img => imageObserver.observe(img));
 });
 
-// Optimize particles initialization
+// Initialize 3D particles background
 function initParticles() {
-    const particlesContainer = document.getElementById('particlesContainer');
-    const colors = ['rgba(108, 99, 255, 0.3)', 'rgba(255, 101, 132, 0.3)', 'rgba(0, 245, 160, 0.3)'];
+const particlesContainer = document.getElementById('particlesContainer');
+const colors = ['rgba(108, 99, 255, 0.3)', 'rgba(255, 101, 132, 0.3)', 'rgba(0, 245, 160, 0.3)'];
+
+// Reduce number of particles for better performance
+const particleCount = window.innerWidth < 768 ? 20 : 30;
+
+// Create particles
+for (let i = 0; i < particleCount; i++) {
+    const particle = document.createElement('div');
+    particle.className = 'particle';
     
-    // Reduce number of particles for better performance
-    const particleCount = window.innerWidth < 768 ? 15 : 25;
+    // Random position
+    const posX = Math.random() * 100;
+    const posY = Math.random() * 100;
     
-    // Create particles with requestAnimationFrame for better performance
-    let i = 0;
-    function createParticle() {
-        if (i >= particleCount) return;
-        
-        const particle = document.createElement('div');
-        particle.className = 'particle';
-        
-        const posX = Math.random() * 100;
-        const posY = Math.random() * 100;
-        const size = Math.random() * 6 + 2; // Smaller particles
-        const color = colors[Math.floor(Math.random() * colors.length)];
-        const duration = Math.random() * 10 + 5; // Shorter animations
-        
-        particle.style.cssText = `
-            left: ${posX}%;
-            top: ${posY}%;
-            width: ${size}px;
-            height: ${size}px;
-            background: ${color};
-            animation-duration: ${duration}s;
-            box-shadow: 0 0 ${size}px ${color};
-            will-change: transform;
-        `;
-        
-        particlesContainer.appendChild(particle);
-        i++;
-        requestAnimationFrame(createParticle);
-    }
+    // Smaller size range for better performance
+    const size = Math.random() * 8 + 3;
     
-    requestAnimationFrame(createParticle);
+    // Random color
+    const color = colors[Math.floor(Math.random() * colors.length)];
+    
+    // Shorter animation duration
+    const duration = Math.random() * 15 + 5;
+    
+    // Set styles
+    particle.style.cssText = `
+    left: ${posX}%;
+    top: ${posY}%;
+    width: ${size}px;
+    height: ${size}px;
+    background: ${color};
+    animation-delay: ${delay}s;
+    animation-duration: ${duration}s;
+    box-shadow: 0 0 ${size}px ${color};
+    `;
+    
+    particlesContainer.appendChild(particle);
+}
 }
 
 // Initialize multi-page navigation
